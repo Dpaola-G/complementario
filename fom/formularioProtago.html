@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="formularioprota.css">
+</head>
+
+<body>
+
+
+    <section class="links">
+        <a href="./formularioDirect.html">FORMULARIO DIRECTOR</a>
+        <a href="./formularioPelicula.html">FORMULARIO PELICULA</a>
+    </section>
+
+    <div class="container-registro">
+        
+
+        <h2>REGISTRO DE PROTAGONISTA</h2>
+    
+        <form action="" method="get">
+            
+            <div class="genero">
+                <label for="genero">Género del Protagonista</label>
+                <select name="genero" id="genero">
+                    <option value=" "></option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
+            </div>
+    
+            <div class="nombre">
+                <label for="nombre">Nombre del Protagonista</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Ingrese el Nombre del Director">
+            </div>
+    
+            <div class="nacionalidad">
+                <label for="nacionalidad">Nacionalidad Protagonista</label>
+                <input type="text" name="nacionalidad" id="nacionalidad" placeholder="Ingrese la Nacionalidad">
+            </div>
+    
+            <div class="edad">
+                <label for="edad">Edad Protagonista</label>
+                <input type="text" name="edad" id="edad" placeholder="Ingrese la edad">
+            </div>
+    
+       
+
+
+            <!--prueba"--->
+
+          
+   
+            <input type="button" name="button" value="Guardar Info..." onClick="GuardarInfo(this.form)">
+        </form>
+    </div>
+    <script type="text/javascript">
+
+        const arreglo = [];
+
+        class Protagonista{
+            constructor({
+                genero,
+                nombre,
+                nacionalidad,
+                edad,
+            }) {
+                this.genero = genero;  
+                this.nombre = nombre;  
+                this.nacionalidad = nacionalidad;
+                this.edad = edad;
+            }
+        }
+
+
+        function GuardarInfo(form) {
+
+            var genero = form.genero.value;
+            var nombre = form.nombre.value;
+            var nacionalidad = form.nacionalidad.value;
+            var edad = form.edad,value;
+            
+            //   console.log ("genero director: " + genero);
+            //   console.log ("nombre director: " + nombre);
+            //   console.log ("nacionalidad director: " +nacionalidad);
+            //   console.log ("numero edad: " + edad);
+           
+
+
+            const objeto = new Protagonista ({ genero:genero, nombre, nacionalidad: nacionalidad, edad: edad });
+
+            arreglo.push(objeto);
+
+            console.log(arreglo);
+
+
+            form.reset();
+
+        }
+    </script>
+
+
+</body>
+</html>

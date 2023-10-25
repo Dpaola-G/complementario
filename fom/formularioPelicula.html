@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="./formupelicula.css">
+</head>
+
+<body>
+
+    <section class="links">
+        <a href="./formularioProtago.html">FORMULARIO PROTAGONISTA</a>
+        <a href="./formularioDirect.html">FORMULARIO DIRECTOR</a>
+    </section>
+
+    <div class="container-registro">
+
+        <h2> REGISTRO DE PELICULA</h2>
+
+        <form action="" method="get">
+
+            <div class="nombre pelicula">
+                <label for="nombre">Nombre pelicula</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Ingrese el Nombre del Director">
+            </div>
+
+
+            <div class="origen pelicula">
+                <label for="origen">origen pelicula </label>
+                <input type="text" name="origen pelicula" id="origen" placeholder="origen pelicula">
+            </div>
+
+            
+            <div class="duracion">
+                <label for="duracion">duracion pelicula</label>
+                <input type="text" name="duracion" id="duracion" placeholder="Ingrese la duracion">
+            </div>
+
+            <div class="director">
+                <label for="director">director pelicula</label>
+                <input type="text" name="director" id="director" placeholder="Ingrese el director">
+            </div>
+
+            <div class="protagonista">
+                <label for="protagonista">protagonistas pelicula</label>
+                <input type="text" name="protagonista" id="protagonista" placeholder="Ingrese el protagonista ">
+            </div>
+
+
+           
+
+
+ 
+            <!--prueba"--->
+
+
+            <input type="button" name="button" value="Guardar Info..." onClick="resultadosFormulario(this.form)">
+        </form>
+    </div>
+    <script type="text/javascript">
+
+        const arreglo = [];
+
+        
+    class Pelicula {
+        constructor({
+            nombre,
+            duracion,
+            origen,
+            director,
+       
+        })
+
+        {
+            this.nombre = nombre;  
+            this.duracion = duracion; 
+            this.origen = origen;  
+            this.director = director; 
+       
+            
+        }
+    }
+
+
+        function resultadosFormulario(form) {
+
+            var nombre = form.nombre.value;
+            var duracion = form.duracion.value;
+            var origen = form.origen.value;
+            var director = form.director.value;
+            var protagonista = form.protagonista.value;
+
+
+            const objeto = new Pelicula({ nombre: nombre, duracion: duracion, origen: origen, director: director, protagonista:protagonista });
+
+            arreglo.push(objeto);
+
+            console.log(arreglo);
+
+
+            form.reset();
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>

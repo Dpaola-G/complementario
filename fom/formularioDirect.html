@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="formularioo.css">
+</head>
+
+<body>
+
+    <section class="links">
+        <a href="./formularioProtago.html">FORMULARIO PROTAGONISTA</a>
+        <a href="./formularioPelicula.html">FORMULARIO PELICULA</a>
+    </section>
+
+
+    <div class="container-registro">
+
+        <h2>REGISTRO DE DIRECTORES</h2>
+
+        <form action="" method="get">
+
+            <div class="nombre_director">
+                <label for="nombre">Nombre del Director</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Ingrese el Nombre del Director">
+            </div>
+
+
+            
+            <div class="nacionalidad">
+                <label for="nacionalidad">Nacionalidad Director</label>
+                <input type="text" name="nacionalidad" id="nacionalidad" placeholder="Ingrese la Nacionalidad">
+            </div>
+
+            <div class="premios">
+                <label for="premios">Ingrese los premios recibidos</label>
+                <input type="text" name="premios" id="premios" placeholder="Ingrese el nombre del Premio">
+            </div>
+
+            <div class="cantidad">
+                <label for="cantidad_de_premios">Cantidad de Premios Recibidos</label>
+                <input type="number" name="numero" id="numero" placeholder="Ingrese la cantidad de premios">
+            </div>
+
+
+           
+
+
+ 
+            <!--prueba"--->
+
+
+            <input type="button" name="button" value="Guardar Info..." onClick="resultadosFormulario(this.form)">
+        </form>
+    </div>
+    <script type="text/javascript">
+
+        const arreglo = [];
+
+        class Director {
+            constructor({
+                nombre,
+                nacionalidad,
+                premios,
+                numero,
+            }) {
+                this.nombre = nombre;
+                this.nacionalidad = nacionalidad;
+                this.premios = premios;
+            }
+        }
+
+
+        function resultadosFormulario(form) {
+
+            var nombre = form.nombre.value;
+            var nacionalidad = form.nacionalidad.value;
+            var premios = form.premios.value;
+            var numero = form.numero.value;
+
+            //   console.log ("nombre director: " + nombre);
+            //   console.log ("nacionalidad director: " +nacionalidad);
+            //   console.log ("numero premios: " + premios);
+            //   console.log ("cantidad premios " +numero);
+
+
+            const objeto = new Director({ nombre: nombre, nacionalidad: nacionalidad, premios: premios, numero: numero });
+
+            arreglo.push(objeto);
+
+            console.log(arreglo);
+
+
+            form.reset();
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>
